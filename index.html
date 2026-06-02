@@ -276,6 +276,10 @@ body{background:var(--off);color:var(--text);font-family:'DM Sans',sans-serif;ma
     overflow: visible !important;
   }
 
+  /* On mobile: Updates (right panel) comes FIRST, Titans list below */
+  .split-right { order: 1 !important; }
+  .split-left  { order: 2 !important; }
+
   /* ── Left panel: full width, natural height ── */
   .split-left {
     width: 100% !important;
