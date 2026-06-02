@@ -1,0 +1,329 @@
+{
+  "titanData": {
+    "participants": [
+      {
+        "id": "50014021",
+        "name": "Mr. Sadiq Basha",
+        "store": "Ham.Express",
+        "circle": "Chennai",
+        "rm": "Yogesh",
+        "sd": "Divya Lakshmi",
+        "rom": "Divya Lakshmi"
+      },
+      {
+        "id": "50017199",
+        "name": "Mr. Harvinder Singh",
+        "store": "Hamleys CP67",
+        "circle": "Mohali",
+        "rm": "Bipro",
+        "sd": "Ajay Gill",
+        "rom": "Ajay Gill"
+      },
+      {
+        "id": "50036856",
+        "name": "Mr. Atul Gupta",
+        "store": "Ham.Southcty",
+        "circle": "Kolkata",
+        "rm": "Yogesh",
+        "sd": "Manmohan",
+        "rom": "Chetan Chaudhari"
+      },
+      {
+        "id": "50041220",
+        "name": "Mr. Vivek K",
+        "store": "Ham.Coimbot",
+        "circle": "Coimbatore",
+        "rm": "Yogesh",
+        "sd": "Damodharan",
+        "rom": "Divya Lakshmi"
+      },
+      {
+        "id": "50042459",
+        "name": "Mr. Manish Dubey",
+        "store": "Ham.AVKDel",
+        "circle": "New Delhi",
+        "rm": "Bipro",
+        "sd": "Ajay Gill",
+        "rom": "Ajay Gill"
+      },
+      {
+        "id": "50112630",
+        "name": "Mr. Sarath Sg",
+        "store": "Ham.Lulu.Trvn.",
+        "circle": "Thiruvananthapuram",
+        "rm": "Yogesh",
+        "sd": "Divya Lakshmi",
+        "rom": "Divya Lakshmi"
+      },
+      {
+        "id": "50120807",
+        "name": "Mr. Deepesh Sinha",
+        "store": "Ham.Phnx Lucknw",
+        "circle": "Lucknow",
+        "rm": "Bipro",
+        "sd": "Ashish Juyal",
+        "rom": "Lalit Mohan"
+      },
+      {
+        "id": "50124661",
+        "name": "Mr. Mohit Ahuja",
+        "store": "Ham.Elante",
+        "circle": "Chandigarh",
+        "rm": "Bipro",
+        "sd": "Harsh Sharma",
+        "rom": "Ajay Gill"
+      },
+      {
+        "id": "50124893",
+        "name": "Ms. Ambika Ghosh dastidar",
+        "store": "Ham.JWD",
+        "circle": "Mumbai",
+        "rm": "Yogesh",
+        "sd": "Sudhir",
+        "rom": "Shirish Mastud"
+      },
+      {
+        "id": "50126276",
+        "name": "Mr. Mukut Sanadhya",
+        "store": "Ham.Jaipur",
+        "circle": "Jaipur",
+        "rm": "Bipro",
+        "sd": "Shashank Rathore",
+        "rom": "Ajay Gill"
+      },
+      {
+        "id": "50128263",
+        "name": "Mr. Naresh kumar Mishra",
+        "store": "Ham.DB City",
+        "circle": "Bhopal",
+        "rm": "Yogesh",
+        "sd": "Virendra Rahevar",
+        "rom": "Shirish Mastud"
+      },
+      {
+        "id": "50053477",
+        "name": "Mr. Jangapole Sreenu",
+        "store": "Ham.Sarathi",
+        "circle": "Hyderabad",
+        "rm": "Bipro",
+        "sd": "Ashlin Moses",
+        "rom": "Ashlin Moses"
+      },
+      {
+        "id": "50083623",
+        "name": "Ms. Kajal Sahu",
+        "store": "Ham.Pune",
+        "circle": "Pune",
+        "rm": "Yogesh",
+        "sd": "Subodh",
+        "rom": "Chetan Chaudhari"
+      },
+      {
+        "id": "50046510",
+        "name": "Mr. Sagar B",
+        "store": "Ham.Phoenix",
+        "circle": "Bangalore",
+        "rm": "Bipro",
+        "sd": "Harnest",
+        "rom": "Ashlin Moses"
+      },
+      {
+        "id": "50044517",
+        "name": "Mr. Pankaj Singh",
+        "store": "Ham.Jammu",
+        "circle": "Jammu",
+        "rm": "Bipro",
+        "sd": "Lalit Mohan",
+        "rom": "Lalit Mohan"
+      }
+    ],
+    "months": [
+      {
+        "month": 1,
+        "period": "May"
+      },
+      {
+        "month": 2,
+        "period": "June"
+      },
+      {
+        "month": 3,
+        "period": "July"
+      },
+      {
+        "month": 4,
+        "period": "August"
+      },
+      {
+        "month": 5,
+        "period": "Sept"
+      },
+      {
+        "month": 6,
+        "period": "Oct"
+      }
+    ],
+    "milestones": [
+      {
+        "id": "spl_1",
+        "type": "self-paced",
+        "month": 1,
+        "title": "Make Data-Driven Decisions",
+        "platform": "Coursera"
+      },
+      {
+        "id": "spl_2",
+        "type": "self-paced",
+        "month": 1,
+        "title": "Ask Effective Questions",
+        "platform": "Coursera"
+      },
+      {
+        "id": "spl_3",
+        "type": "self-paced",
+        "month": 2,
+        "title": "Managing as a Coach",
+        "platform": "Coursera"
+      },
+      {
+        "id": "spl_4",
+        "type": "self-paced",
+        "month": 3,
+        "title": "Practice On LinkedIn AI Coach - Empathy",
+        "platform": "LinkedIn"
+      },
+      {
+        "id": "spl_5",
+        "type": "self-paced",
+        "month": 4,
+        "title": "Practice On LinkedIn AI Coach - Go BIG on Feedback",
+        "platform": "LinkedIn"
+      },
+      {
+        "id": "spl_6",
+        "type": "self-paced",
+        "month": 4,
+        "title": "Discover the Art of Prompting",
+        "platform": "Coursera"
+      },
+      {
+        "id": "vs_1",
+        "type": "virtual",
+        "month": 1,
+        "title": "Simulated Cluster P&L \u2013 Understanding & Ownership",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_2",
+        "type": "virtual",
+        "month": 1,
+        "title": "Cluster Revenue & Seasonality Planning",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_3",
+        "type": "virtual",
+        "month": 2,
+        "title": "Boundaryless Retail",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_4",
+        "type": "virtual",
+        "month": 2,
+        "title": "Store Incentives \u2013 Design, Logic & Deployment",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_5",
+        "type": "virtual",
+        "month": 3,
+        "title": "Digital Awareness for Business \u2013 Leveraging hyperlocal understanding",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_6",
+        "type": "virtual",
+        "month": 3,
+        "title": "Understanding VM & Expectation Setting",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_7",
+        "type": "virtual",
+        "month": 3,
+        "title": "DC/STO Summary & Weekly Sales Insights & More",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_8",
+        "type": "virtual",
+        "month": 4,
+        "title": "AI For Business",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_9",
+        "type": "virtual",
+        "month": 4,
+        "title": "Regent Street Best Practices",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_10",
+        "type": "virtual",
+        "month": 4,
+        "title": "Day In The Life Of SD",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_11",
+        "type": "virtual",
+        "month": 5,
+        "title": "HR Connect - Important Policies & How To Hire",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_12",
+        "type": "virtual",
+        "month": 5,
+        "title": "Inbox to Impact",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_13",
+        "type": "virtual",
+        "month": 5,
+        "title": "Mall Connects & BD",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "vs_14",
+        "type": "virtual",
+        "month": 6,
+        "title": "Enterprise Ownership Mindset & Cross-Functional Engagement",
+        "platform": "Virtual Session"
+      },
+      {
+        "id": "qa_1",
+        "type": "assessment",
+        "month": 3,
+        "title": "Quarterly Assessment 1",
+        "platform": "Assessment"
+      },
+      {
+        "id": "qa_2",
+        "type": "assessment",
+        "month": 6,
+        "title": "Quarterly Assessment 2",
+        "platform": "Assessment"
+      }
+    ],
+    "projects": {},
+    "newsletter": [],
+    "progress": {}
+  },
+  "currentMonth": 1,
+  "progTitle": "Titan Heroes Leadership Programme 2026",
+  "lastUpdated": "2026-06-02T00:00:00Z"
+}
