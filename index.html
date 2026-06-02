@@ -607,6 +607,15 @@ function showPage(page,el){
     var first=document.querySelector('.sb-nav-item');
     if(first)first.classList.add('active');
   }
+  // Mobile: close sidebar and scroll content into view
+  if(window.innerWidth<=768){
+    var sidebar=document.getElementById('sidebar');
+    if(sidebar)sidebar.classList.remove('open');
+    setTimeout(function(){
+      var splitLeft=document.querySelector('.split-left');
+      if(splitLeft)splitLeft.scrollIntoView({behavior:'smooth',block:'start'});
+    },100);
+  }
 }
 
 function showRoleFilter(key,name,el){
@@ -626,6 +635,15 @@ function showRoleFilter(key,name,el){
       +'<div class="titans-grid" id="role-cards-grid"></div>';
     var grid=document.getElementById('role-cards-grid');
     if(grid)renderCardsInto(grid,pts);
+  }
+  // Mobile: close sidebar and scroll content into view
+  if(window.innerWidth<=768){
+    var sidebar=document.getElementById('sidebar');
+    if(sidebar)sidebar.classList.remove('open');
+    setTimeout(function(){
+      var splitLeft=document.querySelector('.split-left');
+      if(splitLeft)splitLeft.scrollIntoView({behavior:'smooth',block:'start'});
+    },100);
   }
 }
 
@@ -716,6 +734,11 @@ function showDetail(pid){
     return '<div style="margin-bottom:20px;"><div class="jtype-title">'+lbs[type]+'</div>'
       +'<div class="months-scroll">'+cols+'</div></div>';
   }).join('');
+  // Mobile: close sidebar
+  if(window.innerWidth<=768){
+    var sidebar=document.getElementById('sidebar');
+    if(sidebar)sidebar.classList.remove('open');
+  }
   var dc=document.getElementById('detail-content');
   if(dc)dc.innerHTML=
     '<div class="dh">'
