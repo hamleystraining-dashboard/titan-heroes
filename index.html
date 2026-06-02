@@ -270,9 +270,9 @@ body{background:var(--off);color:var(--text);font-family:'DM Sans',sans-serif;ma
         <div class="carousel-header">
           <div class="carousel-label">&#128240; UPDATES</div>
           <div class="carousel-nav">
-            <button class="carousel-nav-btn" id="car-prev" onclick="carNav(-1)" disabled>&#8249;</button>
+            <button class="carousel-nav-btn" id="car-prev" disabled>&#8249;</button>
             <div class="carousel-counter" id="car-counter">&#8212;</div>
-            <button class="carousel-nav-btn" id="car-next" onclick="carNav(1)" disabled>&#8250;</button>
+            <button class="carousel-nav-btn" id="car-next" disabled>&#8250;</button>
           </div>
         </div>
         <div class="tile-strip-outer" id="tile-outer"><div class="tile-strip" id="tile-strip"></div></div>
@@ -282,13 +282,13 @@ body{background:var(--off);color:var(--text);font-family:'DM Sans',sans-serif;ma
   </div>
 </div>
 
-<div class="lightbox" id="lightbox" onclick="lbBgClick(event)">
-  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lb-close">&#10005;</button>
   <div class="lightbox-title" id="lb-title"></div>
   <div class="lightbox-body" id="lb-body"></div>
   <div class="lightbox-nav">
-    <button class="lightbox-nav-btn" onclick="lbNav(-1,event)">&#8249;</button>
-    <button class="lightbox-nav-btn" onclick="lbNav(1,event)">&#8250;</button>
+    <button class="lightbox-nav-btn" id="lb-prev">&#8249;</button>
+    <button class="lightbox-nav-btn" id="lb-next">&#8250;</button>
   </div>
 </div></div>
 <script>
@@ -326,13 +326,32 @@ function initDashboard(){
   buildSidebar();
   renderOverview();
   initCarousel();
-  // Wire up back buttons
+  // Wire back buttons
   var bb=document.getElementById('back-overview');
   if(bb)bb.onclick=function(){showPage('overview',null);};
   var bb2=document.getElementById('back-role');
   if(bb2)bb2.onclick=function(){showPage('overview',null);};
   var bb3=document.getElementById('back-detail');
   if(bb3)bb3.onclick=goBack;
+
+  // Wire carousel arrows
+  var cprev=document.getElementById('car-prev');
+  if(cprev)cprev.onclick=function(){carNav(-1);};
+  var cnext=document.getElementById('car-next');
+  if(cnext)cnext.onclick=function(){carNav(1);};
+
+  // Wire lightbox buttons
+  var lbclose=document.getElementById('lb-close');
+  if(lbclose)lbclose.onclick=function(e){e.stopPropagation();closeLightbox();};
+  var lbprev=document.getElementById('lb-prev');
+  if(lbprev)lbprev.onclick=function(e){e.stopPropagation();lbIdx=Math.max(0,lbIdx-1);renderLBI();};
+  var lbnext=document.getElementById('lb-next');
+  if(lbnext)lbnext.onclick=function(e){e.stopPropagation();lbIdx=Math.min((D.newsletter||[]).length-1,lbIdx+1);renderLBI();};
+
+  // Wire lightbox background click to close
+  var lb=document.getElementById('lightbox');
+  if(lb)lb.onclick=function(e){if(e.target===lb)closeLightbox();};
+
   var first=document.querySelector('.sb-nav-item');
   if(first)first.classList.add('active');
 }
