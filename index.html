@@ -108,7 +108,7 @@ body{background:var(--off);color:var(--text);font-family:'DM Sans',sans-serif;ma
 /* ── PROJECT CARD ── */
 .proj-card{background:var(--light);border:2px solid var(--gold);border-radius:8px;padding:14px 16px;margin-bottom:20px;}
 .proj-card-title{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;}
-.proj-grid{display:grid;grid-template-columns:1fr auto 1fr 1fr;gap:12px;}
+.proj-grid{display:grid;grid-template-columns:1fr auto 1fr 1fr 1fr;gap:12px;}
 .proj-field-label{color:var(--gray);font-size:9px;font-weight:700;text-transform:uppercase;margin-bottom:2px;}
 .proj-field-val{color:var(--navy);font-weight:700;font-size:12px;}
 .proj-divider{width:1px;background:var(--gold);}
@@ -373,6 +373,21 @@ body{background:var(--off);color:var(--text);font-family:'DM Sans',sans-serif;ma
   .months-scroll { overflow-x: auto !important; }
   .mc { min-width: 120px !important; }
 }
+/* ── TICKER ── */
+.ticker-bar{background:#ffffff;border-bottom:2px solid var(--gold);padding:0;height:32px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;}
+.ticker-label{background:var(--navy);color:var(--gold);font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:0 12px;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;border-right:2px solid var(--gold);}
+.ticker-track{flex:1;overflow:hidden;position:relative;height:100%;}
+.ticker-inner{display:inline-flex;align-items:center;height:100%;white-space:nowrap;animation:ticker-scroll 30s linear infinite;}
+.ticker-inner:hover{animation-play-state:paused;}
+.ticker-item{font-size:12px;font-weight:600;color:#1a1a2e;padding:0 32px;display:inline-flex;align-items:center;gap:8px;}
+.ticker-item::after{content:'●';color:var(--gold);font-size:8px;}
+.ticker-item:last-child::after{display:none;}
+@keyframes ticker-scroll{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}
+@media(max-width:768px){
+  .ticker-bar{height:28px !important;}
+  .ticker-label{font-size:10px !important;padding:0 8px !important;}
+  .ticker-item{font-size:11px !important;padding:0 20px !important;}
+}
 #loading{display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;gap:14px;background:#0D1B2A;}
 .load-logo-img{width:140px;height:auto;filter:drop-shadow(0 0 20px rgba(212,175,55,0.6));}
 .load-title{font-family:'Rajdhani',sans-serif;font-size:26px;font-weight:700;color:#D4AF37;letter-spacing:3px;}
@@ -416,6 +431,12 @@ body{background:var(--off);color:var(--text);font-family:'DM Sans',sans-serif;ma
   <div class="topbar">
     <div class="topbar-title">&#9889; KNOW YOUR TITANS PROGRESS</div>
     <div class="topbar-month" id="topbar-month"></div>
+  </div>
+  <div class="ticker-bar" id="ticker-bar">
+    <div class="ticker-label">&#9889; LIVE</div>
+    <div class="ticker-track">
+      <div class="ticker-inner" id="ticker-inner"></div>
+    </div>
   </div>
   <div class="split-body">
     <div class="split-left">
@@ -485,6 +506,7 @@ body{background:var(--off);color:var(--text);font-family:'DM Sans',sans-serif;ma
     var rec=await res.json();
     var td=rec.titanData||{};
     td.newsletter=td.newsletter||td.newsletterIndex||[];
+    td.ticker=td.ticker||[];
     window.DASH_DATA=td;
     window.CURRENT_MONTH=rec.currentMonth||1;
     window.PROG_TITLE=rec.progTitle||'Titan Heroes';
@@ -538,6 +560,9 @@ function initDashboard(){
 
   var first=document.querySelector('.sb-nav-item');
   if(first)first.classList.add('active');
+
+  // Ticker
+  initTicker();
 
   // Mobile sidebar toggle
   var sbHead=document.querySelector('.sb-head');
@@ -706,7 +731,8 @@ function showDetail(pid){
       +'<div><div class="proj-field-label">Project</div><div class="proj-field-val">'+pr.title+'</div></div>'
       +'<div class="proj-divider"></div>'
       +'<div><div class="proj-field-label">Target</div><div class="proj-field-val">'+(pr.target||'-')+'</div></div>'
-      +'<div><div class="proj-field-label">Store 1</div><div class="proj-field-val">'+(pr.store1||'-')+'</div></div>'
+      +'<div><div class="proj-field-label">Store Code 1</div><div class="proj-field-val">'+(pr.store1||'-')+'</div></div>'
+      +'<div><div class="proj-field-label">Store Code 2</div><div class="proj-field-val">'+(pr.store2||'-')+'</div></div>'
       +'</div></div>';
   }
   var typeSections=['self-paced','virtual','assessment'].map(function(type){
@@ -919,6 +945,24 @@ function lbNav(dir,e){
   lbIdx=Math.max(0,Math.min(nl.length-1,lbIdx+(typeof dir==='number'?dir:0)));
   renderLBI();
 }
+function initTicker(){
+  var items = (D.ticker && D.ticker.length) ? D.ticker
+    : ['Welcome to Titan Heroes Leadership Programme 2026',
+       'Click on any Titan to view their journey',
+       'Updates section shows latest newsletters and sessions'];
+  var inner = document.getElementById('ticker-inner');
+  if(!inner) return;
+  // Duplicate items so scroll loops seamlessly
+  var all = items.concat(items);
+  inner.innerHTML = all.map(function(t){
+    return '<span class="ticker-item">'+t+'</span>';
+  }).join('');
+  // Adjust animation speed based on content length
+  var totalLen = items.join(' ').length;
+  var duration = Math.max(20, Math.min(60, totalLen * 0.3));
+  inner.style.animationDuration = duration + 's';
+}
+
     initDashboard();
   }catch(err){
     if(lm){lm.textContent='Could not load: '+err.message;lm.style.color='#C0392B';}
