@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Titan Heroes Leadership Programme 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -190,146 +190,184 @@ body{background:var(--off);color:var(--text);font-family:'DM Sans',sans-serif;ma
 .lightbox-nav-btn{background:rgba(212,175,55,0.1);border:1.5px solid rgba(212,175,55,0.3);color:var(--gold);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;pointer-events:all;}
 .lightbox-nav-btn:hover{background:var(--gold);color:var(--navy);}
 
-/* ═══════════════════════════════════════
-   MOBILE RESPONSIVE — ≤768px
-   No features removed. Layout adapts.
-═══════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════
+   MOBILE  ≤ 768px  — layout only, no features removed
+═══════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* Sidebar becomes top horizontal nav bar */
+  /* ── Body: allow normal page scroll ── */
+  body { overflow-y: auto !important; height: auto !important; }
+
+  /* ── Sidebar: fixed top strip ── */
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: fixed;
+    width: 100% !important;
+    height: auto !important;
+    position: fixed !important;
     top: 0; left: 0; right: 0;
-    flex-direction: column;
-    border-right: none;
-    border-bottom: 3px solid var(--gold);
-    z-index: 200;
-    max-height: 100vh;
-    overflow-y: auto;
+    flex-direction: column !important;
+    border-right: none !important;
+    border-bottom: 3px solid var(--gold) !important;
+    z-index: 300 !important;
+    overflow: visible !important;
   }
 
+  /* Sidebar head: logo + hamburger in one row */
   .sb-head {
-    padding: 10px 16px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    border-bottom: 1px solid rgba(212,175,55,0.2);
-  }
-
-  .sb-logo-wrap {
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 0;
-  }
-
-  .sb-logo-icon { width: 36px; height: 36px; font-size: 16px; }
-  .sb-logo { font-size: 14px; }
-  .sb-logo-sub { display: none; }
-  .sb-updated { display: none; }
-
-  /* Hamburger toggle button */
-  .sb-head::after {
-    content: '☰';
-    color: var(--gold);
-    font-size: 20px;
+    padding: 10px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-direction: row !important;
+    border-bottom: none !important;
     cursor: pointer;
   }
+  .sb-logo-wrap { flex-direction: row !important; align-items: center !important; gap: 10px !important; margin-bottom: 0 !important; }
+  .sb-logo-icon { width: 34px !important; height: 34px !important; font-size: 15px !important; }
+  .sb-logo { font-size: 13px !important; letter-spacing: 2px !important; }
+  .sb-logo-sub, .sb-updated { display: none !important; }
+  .sb-hamburger { color: var(--gold); font-size: 22px; line-height: 1; }
 
-  /* Nav + chips hidden by default on mobile, shown when sidebar open */
+  /* Nav + role chips hidden by default */
   .sb-nav, .sb-divider, .sb-role-label,
-  #sb-roms, #sb-sds, #sb-rms { display: none; }
-
+  #sb-roms, #sb-sds, #sb-rms {
+    display: none !important;
+  }
+  /* Show when .open is toggled */
   .sidebar.open .sb-nav,
   .sidebar.open .sb-divider,
   .sidebar.open .sb-role-label,
   .sidebar.open #sb-roms,
-  .sidebar.open #sb-roms,
   .sidebar.open #sb-sds,
-  .sidebar.open #sb-rms { display: block; }
+  .sidebar.open #sb-rms {
+    display: block !important;
+  }
+  .sidebar.open {
+    max-height: 100vh !important;
+    overflow-y: auto !important;
+  }
 
-  /* Content shifts down under the fixed header */
+  /* ── Content: full width, push below fixed header ── */
   .content {
-    margin-left: 0;
-    margin-top: 64px;
-    height: calc(100vh - 64px);
+    margin-left: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding-top: 60px;
   }
 
-  /* Split: stack vertically */
-  .split-body { flex-direction: column; }
+  /* ── Topbar ── */
+  .topbar {
+    position: fixed;
+    top: 56px;
+    left: 0; right: 0;
+    z-index: 200;
+    padding: 0 14px !important;
+    min-height: 40px !important;
+  }
+  .topbar-title { font-size: 11px !important; letter-spacing: 1px !important; }
 
+  /* Extra top padding to clear both fixed bars */
+  .content { padding-top: 100px !important; }
+
+  /* ── Split body: stack vertically, no fixed height ── */
+  .split-body {
+    flex-direction: column !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* ── Left panel: full width, natural height ── */
   .split-left {
-    flex: none;
-    width: 100%;
-    overflow-y: auto;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    flex: none !important;
   }
 
-  /* Right panel (logo + carousel) goes below on mobile */
-  .split-right {
-    width: 100%;
-    border-left: none;
-    border-top: 3px solid var(--gold);
-    height: 420px;
-    flex-shrink: 0;
+  /* ── Hero ── */
+  .hero {
+    position: static !important;
+    padding: 16px 14px 14px !important;
+    flex-shrink: unset !important;
   }
+  .hero-title { font-size: 22px !important; }
+  .hero-sub { font-size: 11px !important; }
+  .hero-stats { flex-wrap: wrap !important; }
+  .hstat { min-width: 50% !important; border-bottom: 1px solid rgba(212,175,55,0.15) !important; padding: 10px 12px !important; }
 
-  /* Hero banner compact */
-  .hero { padding: 16px 16px 14px; }
-  .hero-title { font-size: 22px; }
-  .hero-sub { font-size: 11px; }
-  .hero-stats { flex-wrap: wrap; }
-  .hstat { min-width: 50%; border-bottom: 1px solid rgba(212,175,55,0.2); }
+  /* ── Pages ── */
+  .page { padding: 14px !important; }
+  .page-title { font-size: 18px !important; }
 
-  /* Pages */
-  .page { padding: 16px; }
-  .page-title { font-size: 18px; }
+  /* ── Titan cards: single column ── */
+  .titans-grid { grid-template-columns: 1fr !important; }
 
-  /* Titan cards — single column */
-  .titans-grid { grid-template-columns: 1fr; }
-
-  /* Journey months — scroll horizontally */
+  /* ── Journey months: horizontal scroll ── */
   .months-scroll {
-    grid-template-columns: repeat(6, 140px);
-    overflow-x: auto;
-    padding-bottom: 8px;
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 8px !important;
+    padding-bottom: 8px !important;
+    -webkit-overflow-scrolling: touch;
   }
+  .mc { min-width: 130px !important; flex-shrink: 0 !important; }
 
-  /* Detail view */
-  .dh { flex-wrap: wrap; gap: 10px; padding: 14px; }
-  .dh-name { font-size: 20px; }
+  /* ── Detail view ── */
+  .dh { flex-wrap: wrap !important; padding: 12px !important; }
+  .dh-name { font-size: 20px !important; }
+  .proj-grid { grid-template-columns: 1fr 1fr !important; }
+  .proj-divider { display: none !important; }
 
-  /* Project card */
-  .proj-grid { grid-template-columns: 1fr; }
-  .proj-divider { display: none; }
+  /* ── RIGHT PANEL (logo + carousel): full width below content ── */
+  .split-right {
+    width: 100% !important;
+    height: auto !important;
+    border-left: none !important;
+    border-top: 3px solid var(--gold) !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+    flex-shrink: unset !important;
+  }
 
   /* Logo panel compact */
-  .logo-panel { padding: 12px 16px 10px; }
-  .logo-img { width: 100px; }
-  .logo-year { font-size: 9px; }
+  .logo-panel { padding: 16px 16px 12px !important; }
+  .logo-img { width: 90px !important; }
+  .logo-year, .logo-sub { font-size: 9px !important; }
+  .logo-divider { margin-top: 8px !important; }
 
-  /* Topbar */
-  .topbar { padding: 0 14px; min-height: 44px; }
-  .topbar-title { font-size: 11px; letter-spacing: 1px; }
+  /* Carousel: fixed height so it's visible */
+  .carousel-wrap {
+    height: 340px !important;
+    overflow: hidden !important;
+    flex: none !important;
+  }
+  .tile-strip-outer { height: 240px !important; }
+  .tile-img { object-fit: contain !important; }
 
-  /* Lightbox full screen on mobile */
-  .lightbox-body img { max-width: 96vw; max-height: 80vh; }
-  .lightbox-body iframe { width: 96vw; height: 80vh; }
-  .lightbox-nav-btn { width: 36px; height: 36px; font-size: 16px; }
+  /* ── Lightbox full-screen ── */
+  .lightbox-body img { max-width: 96vw !important; max-height: 78vh !important; }
+  .lightbox-body iframe { width: 96vw !important; height: 78vh !important; }
+  .lightbox-nav-btn { width: 36px !important; height: 36px !important; font-size: 16px !important; }
+  .lightbox-title { font-size: 13px !important; max-width: 70vw !important; }
+
+  /* ── Back button larger touch target ── */
+  .back-btn { padding: 8px 14px !important; font-size: 13px !important; margin-bottom: 14px !important; }
+
+  /* ── Badges wrap nicely ── */
+  .tc-badges { flex-wrap: wrap !important; gap: 5px !important; }
 }
 
-/* ═══════════════════════════════════════
-   TABLET — 769px to 1024px
-═══════════════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   TABLET  769px – 1024px
+═══════════════════════════════════════════════ */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .sidebar { width: 200px; }
-  .content { margin-left: 200px; }
-  .split-right { width: 300px; }
-  .titans-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
-  .hero-title { font-size: 24px; }
-  .months-scroll { grid-template-columns: repeat(6, 1fr); overflow-x: auto; }
+  .sidebar { width: 200px !important; }
+  .content { margin-left: 200px !important; }
+  .split-right { width: 300px !important; }
+  .titans-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important; }
+  .hero-title { font-size: 26px !important; }
+  .months-scroll { overflow-x: auto !important; }
+  .mc { min-width: 120px !important; }
 }
 #loading{display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;gap:14px;background:#0D1B2A;}
 .load-logo-img{width:140px;height:auto;filter:drop-shadow(0 0 20px rgba(212,175,55,0.6));}
@@ -499,25 +537,29 @@ function initDashboard(){
 
   // Mobile sidebar toggle
   var sbHead=document.querySelector('.sb-head');
+  // Add hamburger icon span
+  if(sbHead && !document.getElementById('sb-hamburger')){
+    var ham=document.createElement('span');
+    ham.id='sb-hamburger';
+    ham.className='sb-hamburger';
+    ham.innerHTML='&#9776;';
+    sbHead.appendChild(ham);
+  }
   if(sbHead){
     sbHead.addEventListener('click',function(e){
-      var sidebar=document.getElementById('sidebar');
-      if(sidebar){
-        // Only toggle on mobile (sidebar head click)
-        if(window.innerWidth<=768){
-          sidebar.classList.toggle('open');
-        }
+      if(window.innerWidth<=768){
+        var sidebar=document.getElementById('sidebar');
+        if(sidebar)sidebar.classList.toggle('open');
       }
     });
   }
-  // Close sidebar when a nav item or chip is clicked on mobile
   function closeMobileSidebar(){
     if(window.innerWidth<=768){
       var sidebar=document.getElementById('sidebar');
       if(sidebar)sidebar.classList.remove('open');
     }
   }
-  document.querySelectorAll('.sb-nav-item,.sb-chip').forEach(function(el){
+  document.querySelectorAll('.sb-nav-item').forEach(function(el){
     el.addEventListener('click',function(){closeMobileSidebar();});
   });
 }
