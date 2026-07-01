@@ -529,7 +529,7 @@
       "50036856": {
         "spl_1": "completed",
         "spl_2": "completed",
-        "spl_3": "not-started",
+        "spl_3": "completed",
         "spl_4": "not-applicable",
         "spl_5": "not-applicable",
         "spl_6": "not-applicable",
@@ -577,7 +577,7 @@
       "50042459": {
         "spl_1": "completed",
         "spl_2": "completed",
-        "spl_3": "not-started",
+        "spl_3": "completed",
         "spl_4": "not-applicable",
         "spl_5": "not-applicable",
         "spl_6": "not-applicable",
@@ -847,5 +847,5 @@
   },
   "currentMonth": 1,
   "progTitle": "Titan Heroes Leadership Programme",
-  "lastUpdated": "2026-06-29T06:32:29.285Z"
+  "lastUpdated": "2026-07-01T07:28:57.362Z"
 }
