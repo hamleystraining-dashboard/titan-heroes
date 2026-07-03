@@ -480,7 +480,7 @@
     "progress": {
       "50014021": {
         "spl_1": "completed",
-        "spl_2": "not-started",
+        "spl_2": "completed",
         "spl_3": "not-started",
         "spl_4": "not-applicable",
         "spl_5": "not-applicable",
@@ -845,7 +845,7 @@
       "Project Execution period is June to October(5 months)"
     ]
   },
-  "currentMonth": 1,
+  "currentMonth": 3,
   "progTitle": "Titan Heroes Leadership Programme",
-  "lastUpdated": "2026-07-03T09:07:15.141Z"
+  "lastUpdated": "2026-07-03T11:15:53.352Z"
 }
