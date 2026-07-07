@@ -817,7 +817,7 @@
       "50128263": {
         "spl_1": "completed",
         "spl_2": "completed",
-        "spl_3": "not-started",
+        "spl_3": "completed",
         "spl_4": "not-applicable",
         "spl_5": "not-applicable",
         "spl_6": "not-applicable",
@@ -847,5 +847,5 @@
   },
   "currentMonth": 1,
   "progTitle": "Titan Heroes Leadership Programme",
-  "lastUpdated": "2026-07-07T04:44:45.538Z"
+  "lastUpdated": "2026-07-07T05:44:43.742Z"
 }
