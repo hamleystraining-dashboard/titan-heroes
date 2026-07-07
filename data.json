@@ -553,7 +553,7 @@
       "50041220": {
         "spl_1": "completed",
         "spl_2": "completed",
-        "spl_3": "not-started",
+        "spl_3": "completed",
         "spl_4": "not-applicable",
         "spl_5": "not-applicable",
         "spl_6": "not-applicable",
@@ -673,7 +673,7 @@
       "50083623": {
         "spl_1": "completed",
         "spl_2": "completed",
-        "spl_3": "not-started",
+        "spl_3": "completed",
         "spl_4": "not-applicable",
         "spl_5": "not-applicable",
         "spl_6": "not-applicable",
@@ -721,7 +721,7 @@
       "50120807": {
         "spl_1": "completed",
         "spl_2": "completed",
-        "spl_3": "not-started",
+        "spl_3": "completed",
         "spl_4": "not-applicable",
         "spl_5": "not-applicable",
         "spl_6": "not-applicable",
@@ -769,7 +769,7 @@
       "50124893": {
         "spl_1": "completed",
         "spl_2": "completed",
-        "spl_3": "not-started",
+        "spl_3": "completed",
         "spl_4": "not-applicable",
         "spl_5": "not-applicable",
         "spl_6": "not-applicable",
@@ -793,7 +793,7 @@
       "50126276": {
         "spl_1": "completed",
         "spl_2": "completed",
-        "spl_3": "not-started",
+        "spl_3": "completed",
         "spl_4": "not-applicable",
         "spl_5": "not-applicable",
         "spl_6": "not-applicable",
@@ -845,7 +845,7 @@
       "Project Execution period is June to October(5 months)"
     ]
   },
-  "currentMonth": 3,
+  "currentMonth": 1,
   "progTitle": "Titan Heroes Leadership Programme",
-  "lastUpdated": "2026-07-03T11:15:53.352Z"
+  "lastUpdated": "2026-07-07T04:44:45.538Z"
 }
